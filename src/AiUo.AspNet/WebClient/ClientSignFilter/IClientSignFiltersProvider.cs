@@ -1,6 +1,4 @@
-﻿using AiUo.Configuration;
-
-namespace AiUo.AspNet;
+﻿namespace AiUo.AspNet;
 
 public interface IClientSignFiltersProvider
 {

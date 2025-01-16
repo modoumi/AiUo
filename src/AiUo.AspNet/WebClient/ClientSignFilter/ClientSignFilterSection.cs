@@ -2,7 +2,7 @@
 using AiUo.AspNet;
 using AiUo.Collections;
 using AiUo.Logging;
-using AiUo.Reflection;
+using AiUo.Reflection; 
 
 namespace AiUo.Configuration;
 
@@ -51,25 +51,5 @@ public class ClientSignFilterSection : ConfigSection
             if (!Filters.ContainsKey(DefaultFilterName))
                 throw new Exception($"{SectionName}:Filters不存在DefaultFilterName: {DefaultFilterName}");
         }
-    }
-}
-public class ClientSignFilterElement
-{
-    public string Name { get; set; }
-    public bool Enabled { get; set; }
-    public string HeaderName { get; set; }
-    public string KeySeed { get; set; }
-    public string KeyIndexes { get; set; }
-    private int[] _keyIndexes;
-    public int[] GetKeyIndexes()
-    {
-        if (_keyIndexes == null)
-        {
-            if (string.IsNullOrEmpty(KeyIndexes))
-                throw new Exception($"配置AccessSignFilter:Filters:{Name}:KeyIndexes不能为空");
-            _keyIndexes = KeyIndexes.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => x.Trim().ToInt32()).ToArray();
-        }
-        return _keyIndexes;
     }
 }

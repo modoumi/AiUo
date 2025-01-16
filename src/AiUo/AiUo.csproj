@@ -8,6 +8,7 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>embedded</DebugType>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Libs\ChinaArea\ChinaAreaData.7z" />
